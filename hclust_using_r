@@ -35,9 +35,9 @@ plot(hclust_avg)
 
 (My_cosine_dist = 1-crossprod(My_m) /(sqrt(colSums(My_m^2)%*%t(colSums(My_m^2)))))
 
-# Assuming you have defined the place_labels function somewhere in your code
 
-My_cosine_dist <- as.dist(My_cosine_dist) ## Important
+
+My_cosine_dist <- as.dist(My_cosine_dist) 
 HClust_Ward_CosSim_SmallCorp2 <- hclust(My_cosine_dist, method = "ward.D")
 
 plot(HClust_Ward_CosSim_SmallCorp2, cex = 0.7, hang = -30, main = "Cosine Sim")
