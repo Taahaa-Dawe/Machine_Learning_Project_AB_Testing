@@ -72,3 +72,19 @@ from sklearn.metrics import f1_score
 
 print(classification_report(TestLabels, Prediction1, target_names=MyModelNB1.classes_))
 
+from sklearn.metrics import confusion_matrix , classification_report
+from sklearn.metrics import ConfusionMatrixDisplay
+Prediction1 = MyDT.predict(TestDF)
+
+cnf_matrix1 = confusion_matrix(TestLabels, Prediction1)
+cnf_matrix1
+
+disp = ConfusionMatrixDisplay(confusion_matrix=cnf_matrix1,
+                               display_labels=MyDT.classes_)
+
+plt.figure(figsize=(100,30))
+disp.plot()
+
+print(classification_report(TestLabels, Prediction1, target_names=MyDT.classes_))
+
+
